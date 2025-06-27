@@ -1069,21 +1069,58 @@ form
         background-color: rgba(238, 238, 238, 0);
     }
 
-/* Add this within your existing custom.css file */
+/* Default desktop background */
+#wrapper {
+    background: url(../img/background.jpg);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+}
 
-@media (max-width: 767px) { /* This media query targets screens up to 767px wide, typically considered mobile devices */
+/* Specific for iPhone 16 Pro Max (logical resolution 430x932px in portrait) */
+@media (width: 430px) and (height: 932px) and (orientation: portrait) {
     #wrapper {
-        background: url(../img/background-mobile.jpg); /* Specify your mobile background image here */
+        background: url(../img/iphone16promax-background.jpg); /* Your iPhone 16 Pro Max specific image */
         background-attachment: fixed;
         background-position: center;
         background-size: cover;
     }
 }
 
-/* You might already have a media query for max-width: 400px. You can also add it there if you want a different image for very small screens. */
+/* Mobile devices in portrait orientation (up to 567px logical width) - broader for other iPhones/mobiles */
+@media (max-width: 567px) {
+    #wrapper {
+        background: url(../img/mobile-portrait-background.jpg);
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+/* Mobile devices in landscape orientation (568px to 767px logical width) */
+@media (min-width: 568px) and (max-width: 767px) {
+    #wrapper {
+        background: url(../img/mobile-landscape-background.jpg);
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+/* Tablet devices (768px to 1024px logical width) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    #wrapper {
+        background: url(../img/tablet-background.jpg);
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+/* Very small mobile devices (up to 400px logical width) - keep if needed for smaller than 430px */
 @media (max-width: 400px) {
     #wrapper {
-        background: url(../img/very-small-mobile-background.jpg); /* Another option for very small screens */
+        background: url(../img/small-mobile-background.jpg); /* New image for very small screens */
         background-attachment: fixed;
         background-position: center;
         background-size: cover;
