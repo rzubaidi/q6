@@ -1086,3 +1086,31 @@ form
         background-image: url(../img/background-mobile.jpg) !important; /* Add this line */
     }
 }
+
+/* ================================================================================================================
+                                    Media Query
+================================================================================================================== */
+@media (max-width: 515px){
+    .rene
+    {
+        font-size: 70px;
+    }
+}
+
+/* Add this new media query to fix the hamburger icon position on mobile */
+@media (max-width: 768px) {
+    .navbar-toggle {
+        /* Ensure the margin-right is consistent across mobile views */
+        margin-right: 0 !important;
+    }
+    /* If the icon itself is shifting, you might need to adjust its parent: */
+    .navbar-header {
+        width: 100%; /* Ensure the header takes full width */
+        display: flex; /* Use flexbox for alignment */
+        justify-content: space-between; /* Pushes logo to left, toggle to right */
+        align-items: center; /* Vertically aligns items */
+    }
+    .navbar-brand {
+        margin-left: 0 !important; /* Ensure logo is aligned to the left */
+    }
+}
