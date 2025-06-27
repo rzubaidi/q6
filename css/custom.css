@@ -1070,26 +1070,9 @@ form
     }
 
 /* ================================================================================================================
-                                    Media Query
-================================================================================================================== */
-@media (max-width: 515px){
-    .rene
-    {
-        font-size: 70px;
-    }
-}
-/* ... other media queries ... */
-
-@media only screen and (max-width: 768px) {
-    #wrapper {
-        background-attachment: scroll !important;
-        background-image: url(../img/background-mobile.jpg) !important; /* Add this line */
-    }
-}
-
-/* ================================================================================================================
                                         Media Query
 ================================================================================================================== */
+/* Your existing smaller media queries */
 @media (max-width: 515px){
     .rene
     {
@@ -1113,36 +1096,45 @@ form
     }
 }
 
-/* Corrected Media Query for Mobile Navigation and Background */
-@media only screen and (max-width: 768px) {
-    /* Background image adjustment */
+/* Consolidated and Corrected Media Query for Mobile Navigation and Background */
+@media (max-width: 768px) {
+    /* Background image adjustment for mobile */
     #wrapper {
         background-attachment: scroll !important;
         background-image: url(../img/background-mobile.jpg) !important;
     }
 
-    /* Navbar header flexbox for alignment */
+    /* Navbar Header - Ensure it's a flex container and full width */
     .navbar-header {
         width: 100%;
         display: flex;
-        justify-content: space-between; /* Keeps brand and toggle pushed to ends */
-        align-items: center; /* Vertically centers them */
-    }
-
-    /* Hamburger Toggle Icon Positioning */
-    .navbar-toggle {
-        margin-right: 0 !important; /* Ensure no extra right margin */
-        order: 2; /* Puts the toggle visually on the right */
+        justify-content: space-between; /* Pushes items to opposite ends */
+        align-items: center; /* Vertically centers items */
+        float: none !important; /* Crucial: Disable any conflicting floats */
     }
 
     /* Navbar Brand (Logo/Title) Positioning */
     .navbar-brand {
         margin-left: 0 !important; /* Ensure no extra left margin */
         order: 1; /* Puts the brand visually on the left */
+        float: none !important; /* Crucial: Disable any conflicting floats */
     }
-    /* Additional Bootstrap navbar-fixed-top handling for smaller screens if needed */
+
+    /* Hamburger Toggle Icon Positioning */
+    .navbar-toggle {
+        margin-right: 0 !important; /* Ensure no extra right margin */
+        order: 2; /* Puts the toggle visually on the right */
+        float: none !important; /* Crucial: Disable any conflicting floats */
+    }
+
+    /* Handle fixed navbar behavior on mobile */
     .navbar-fixed-top,
     .navbar-fixed-bottom {
-        position: static; /* Prevent fixed navbar issues on very small screens if desired */
+        position: static !important; /* Prevent fixed navbar issues on very small screens */
+    }
+
+    /* General navbar adjustments for mobile (optional, but ensures consistent padding) */
+    .navbar {
+        padding: 10px 5px;
     }
 }
