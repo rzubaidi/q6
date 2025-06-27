@@ -1068,3 +1068,24 @@ form
     .input-group-addon {
         background-color: rgba(238, 238, 238, 0);
     }
+
+/* Add this within your existing custom.css file */
+
+@media (max-width: 767px) { /* This media query targets screens up to 767px wide, typically considered mobile devices */
+    #wrapper {
+        background: url(../img/mobile-background.jpg); /* Specify your mobile background image here */
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+/* You might already have a media query for max-width: 400px. You can also add it there if you want a different image for very small screens. */
+@media (max-width: 400px) {
+    #wrapper {
+        background: url(../img/very-small-mobile-background.jpg); /* Another option for very small screens */
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+}
