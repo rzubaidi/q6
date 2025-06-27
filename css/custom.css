@@ -1068,3 +1068,9 @@ form
     .input-group-addon {
         background-color: rgba(238, 238, 238, 0);
     }
+
+@media only screen and (max-width: 768px) {
+    #wrapper {
+        background-attachment: scroll !important;
+    }
+}
