@@ -1069,8 +1069,20 @@ form
         background-color: rgba(238, 238, 238, 0);
     }
 
+/* ================================================================================================================
+                                    Media Query
+================================================================================================================== */
+@media (max-width: 515px){
+    .rene
+    {
+        font-size: 70px;
+    }
+}
+/* ... other media queries ... */
+
 @media only screen and (max-width: 768px) {
     #wrapper {
         background-attachment: scroll !important;
+        background-image: url(../img/background-mobile.jpg) !important; /* Add this line */
     }
 }
