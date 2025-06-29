@@ -1131,3 +1131,11 @@ form
     background-attachment: scroll !important;
   }
 }
+@media (max-width: 767px) and (orientation: landscape) {
+  #wrapper {
+    background: url(../img/mobile-landscape-background.jpg) !important;
+    background-attachment: scroll !important;
+    background-position: center !important;
+    background-size: cover !important;
+  }
+}
