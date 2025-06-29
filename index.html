@@ -24,6 +24,14 @@
 		<script src="js/jquery.actual.min.js"></script>
 
         <style>
+            /* Basic reset to ensure full width */
+            html, body {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                overflow-x: hidden; /* Prevent horizontal scrollbar from appearing due to minor layout issues */
+            }
+
             .fa-lightbulb-o {
                 color: orange !important; /* Changed lightbulb icon color to orange */
             }
@@ -48,6 +56,75 @@
                 margin-top: -5px; /* Keep this if it's needed for overall vertical positioning within the navbar */
                 margin-right: 10px; /* Add some space between the logo and the text */
             }
+
+            /* --- Styles for "Projects" section --- */
+            #project-logos-section {
+                padding: 60px 0; /* Add some padding above and below the section */
+                background-color: #f9f9f9; /* Optional: light background color */
+            }
+
+            .project-logos-container {
+                width: 100%;
+                overflow: hidden; /* Hide overflow outside the container */
+                white-space: nowrap; /* Prevent images from wrapping to the next line */
+                box-sizing: border-box; /* Include padding and border in the element's total width and height */
+            }
+
+            .project-logos-strip {
+                display: inline-block; /* Allow the strip to be wider than its parent */
+                animation: scrollLogos 40s linear infinite; /* Apply the scrolling animation */
+            }
+
+            .project-logos-strip:hover {
+                animation-play-state: paused; /* Pause the animation on hover */
+            }
+
+            .project-logo {
+                height: 80px; /* Adjust as needed */
+                margin: 0 30px; /* Space between logos */
+                vertical-align: middle; /* Align logos vertically in the middle */
+                display: inline-block; /* Ensure images are treated as inline blocks for horizontal alignment */
+                filter: grayscale(100%); /* Gray out the images */
+                transition: filter 0.5s ease-in-out; /* Smooth transition for hover effect */
+            }
+
+            .project-logo:hover {
+                filter: grayscale(0%); /* Show color on hover */
+            }
+
+            @keyframes scrollLogos {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    /* Translate by half the strip's width to create a continuous loop.
+                       This works because the strip contains two sets of the 14 projects. */
+                    transform: translateX(-50%); 
+                }
+            }
+            /* --- End of Styles for "Projects" section --- */
+
+            /* --- Styles for Footer --- */
+            #footer {
+                background-color: #333; /* Dark background color */
+                color: #f0f0f0; /* Light text color */
+                padding: 20px 0; /* Add some padding */
+                width: 100%; /* Ensure it spans the full width of its parent */
+                box-sizing: border-box; /* Include padding in the element's total width */
+                margin: 0; /* Remove any potential default margins */
+            }
+            #footer .logo h1 {
+                color: #f0f0f0; /* Ensure the "Quintechs" text is visible */
+            }
+            #footer .copyright p {
+                color: #ccc; /* Slightly lighter color for copyright text */
+            }
+            /* Custom rule to remove padding from columns within the footer */
+            #footer .row [class*="col-"] {
+                padding-left: 0;
+                padding-right: 0;
+            }
+            /* --- End of Styles for Footer --- */
         </style>
 	</head>
 
@@ -132,7 +209,53 @@
 	                            <div style="display: inline; width: 60px; height: 60px;">
 	                                <input type="text" class="knob" data-readonly="true" value="75" data-width="60" data-height="60" data-fgcolor="#39CCCC" readonly="readonly" style="width: 34px; height: 20px; position: absolute; vertical-align: middle; margin-top: 20px; margin-left: -47px; border: 0px; font-weight: bold; font-style: normal; font-variant: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: Arial; text-align: center; /* color: rgb(57, 204, 204); */ padding: 0px; -webkit-appearance: none; background: none;">
 	                        	</div>	
-	                    	</div>	</div>	</div>	</div><div class="row about-us-text">
+	                    	</div>	</div>	</div>	</div>
+                <!-- START OF "Projects" SECTION -->
+                <div class="row text-center" id="project-logos-section">
+                    <div class="col-md-12">
+                        <!-- Heading changed to "Projects" and removed animation classes -->
+                        <h3>Projects</h3> 
+                        <hr class="full">
+                        <br/>
+                        <div class="project-logos-container">
+                            <div class="project-logos-strip">
+                                <!-- Duplicated 14 project images for continuous loop -->
+                                <img src="img/projects/project1.png" alt="Project 1" class="project-logo">
+                                <img src="img/projects/project2.png" alt="Project 2" class="project-logo">
+                                <img src="img/projects/project3.png" alt="Project 3" class="project-logo">
+                                <img src="img/projects/project4.png" alt="Project 4" class="project-logo">
+                                <img src="img/projects/project5.png" alt="Project 5" class="project-logo">
+                                <img src="img/projects/project6.png" alt="Project 6" class="project-logo">
+                                <img src="img/projects/project7.png" alt="Project 7" class="project-logo">
+                                <img src="img/projects/project8.png" alt="Project 8" class="project-logo">
+                                <img src="img/projects/project9.png" alt="Project 9" class="project-logo">
+                                <img src="img/projects/project10.png" alt="Project 10" class="project-logo">
+                                <img src="img/projects/project11.png" alt="Project 11" class="project-logo">
+                                <img src="img/projects/project12.png" alt="Project 12" class="project-logo">
+                                <img src="img/projects/project13.png" alt="Project 13" class="project-logo">
+                                <img src="img/projects/project14.png" alt="Project 14" class="project-logo">
+                                <!-- Second set of 14 projects to enable continuous looping -->
+                                <img src="img/projects/project1.png" alt="Project 1" class="project-logo">
+                                <img src="img/projects/project2.png" alt="Project 2" class="project-logo">
+                                <img src="img/projects/project3.png" alt="Project 3" class="project-logo">
+                                <img src="img/projects/project4.png" alt="Project 4" class="project-logo">
+                                <img src="img/projects/project5.png" alt="Project 5" class="project-logo">
+                                <img src="img/projects/project6.png" alt="Project 6" class="project-logo">
+                                <img src="img/projects/project7.png" alt="Project 7" class="project-logo">
+                                <img src="img/projects/project8.png" alt="Project 8" class="project-logo">
+                                <img src="img/projects/project9.png" alt="Project 9" class="project-logo">
+                                <img src="img/projects/project10.png" alt="Project 10" class="project-logo">
+                                <img src="img/projects/project11.png" alt="Project 11" class="project-logo">
+                                <img src="img/projects/project12.png" alt="Project 12" class="project-logo">
+                                <img src="img/projects/project13.png" alt="Project 13" class="project-logo">
+                                <img src="img/projects/project14.png" alt="Project 14" class="project-logo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- END OF "Projects" SECTION -->
+                <div class="row about-us-text"> <!-- This empty div should likely be removed if it's not serving a purpose, or the "Our Projects" section placed after it -->
+                </div>
 			</div>	</section>	<section id="our_service">
 			<div class="container">
 				<div class="row text-center" id= "heading">
@@ -561,12 +684,12 @@
 		    				        <div class="line-dotted"></div>
 		    				        <p class="meta"><strong>Date: </strong>14/February/2013 <strong>By: </strong>Zyanya Peredo<strong>In: </strong><a href="#">Photography</a>, <a href="#">Print</a>, <a href="#">Design</a>
 		    				        </p>
-		    				        <div class="line-dotted"></div>
+		    				        <div class= "line-dotted"></div>
 		    				        <div class= "post-share">
 		    					        <p>Share this post:</p>
 		    					        <ul>
 		    						        <li>
-		    							        <a href="#" data-toggle="tooltip" title="Contact with Facebook" class="facebook"><i class="fa fa-facebook"></i></a>
+		    							        <a href="#" data-toggle="tooltip" title="Share in Facebook" class="facebook"><i class="fa fa-facebook"></i></a>
 		    						        </li>
 		    						        <li>
 		    							        <a href="#" data-toggle="tooltip" title="Share in Twitter" class="twitter"><i class="fa fa-twitter"></i></a>
@@ -690,7 +813,7 @@
 									        <div class= "col-md-6 col-md-offset-3">
 										        <img class= "img-circle img-responsive center-block" src="img/client3.png">
 									        </div>
-									        <div class= "col-md-12">
+									        <div class="col-md-12">
 										        <p class= "client-comment text-center">
 											        Individual commitment to a group effort- that is what makes a team work, a company work, a society work, a civilisation work.
 										        </p>
@@ -789,12 +912,12 @@
 			</div>
 	    </section>	<section id= "footer" class= "main-footer">
 			<div class= "row">
-				<div class= "logo text-center">
+				<div class= "col-xs-12 logo text-center">
 					<h1>Quintechs</h1>
 				</div>
 			</div>
 			<div class= "row">
-				<div class= "copyright text-center">
+				<div class= "col-xs-12 copyright text-center">
 					<p> Copyright ©2025. All rights reserved.</p>
 				</div>
 			</div>
