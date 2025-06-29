@@ -29,7 +29,6 @@ a:hover {
 .navbar-white {
     background-color: #fff !important;
     transition: background 0.5s ease-out;
-
 }
 
 .navbar-white li a {
@@ -41,9 +40,7 @@ a:hover {
 }
 
 .navbar-white button.navbar-toggle {
-    /* These margins will be removed in favor of the general .navbar-toggle rule */
-    /* margin-top: 5px; */
-    /* margin-right: 10px; */
+    /* Removed redundant margins from here as they are now in .navbar-toggle */
 }
 
 .navbar-white button.navbar-toggle .ion-navicon {
@@ -61,14 +58,14 @@ box-shadow: none;
 
 .navbar-default .navbar-toggle {
     border-color: rgba(221, 221, 221, 0);
-    /* REMOVED: margin: 0; */
+    /* Removed: margin: 0; - this was causing conflicts */
     line-height: 100%;
 }
 
 .navbar-toggle {
     padding: 0;
     border-radius: 0;
-    /* Adjusted margins for better alignment */
+    /* Adjusted margins for better alignment of hamburger icon */
     margin-top: 8px;   /* Adjust this value to move it up/down */
     margin-right: 15px; /* Adjust this value to move it left/right */
 }
@@ -184,9 +181,11 @@ iframe
     width: 100%;
     z-index: 9999;
 }
+
+/* Default desktop background - this rule should be here */
 #wrapper
 {
-    background: url(../img/background.jpg); /* Default desktop background */
+    background: url(../img/background.jpg); /* This is your main desktop background */
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
@@ -642,7 +641,7 @@ a
     padding: 0px 10px;
     font-size: 18px;
 }
-#blog .post .post-share p
+ #blog .post .post-share p
 {
     font-weight: bold;
     float: left;
@@ -662,23 +661,23 @@ a
 }
 /* ---------------------------------------------------------------------------------------------------
                             contact
----------------------------------------------------------------------------------------------------*/
-.input-group
-{
+ ---------------------------------------------------------------------------------------------------*/
+ .input-group
+ {
     padding: 18px 0px;
-}
-.send
-{
+ }
+ .send
+ {
     float: left;
-}
-.map
-{
+ }
+ .map
+ {
     padding: 18px 0px;
-}
-#contact
-{
+ }
+ #contact
+ {
     padding-bottom: 80px;
-}
+ }
 .socials-icons
 {
     margin: 0 auto;
@@ -794,8 +793,8 @@ form
 .copyright a:hover
 {
     text-decoration: none;
-/* color: #137513; */
-color: darkcyan;
+   /* color: #137513; */
+   color: darkcyan;
 }
 .copyright a
 {
@@ -849,7 +848,7 @@ color: darkcyan;
 
 
 
-*/
+ */
 
 .ion-ios7-arrow-down {
     color: #fff;
@@ -933,8 +932,6 @@ color: darkcyan;
     #portfolio .btn {
         margin-bottom: 10px;
     }
-    /* The media query below was wrongly nested. It should be outside the @media (max-width: 400px) block. */
-    /* #wrapper background rule will be handled by the specific media queries below */
 }
 
     #price_table ul {
@@ -1074,32 +1071,56 @@ color: darkcyan;
     .input-group-addon {
         background-color: rgba(238, 238, 238, 0);
     }
-/* NEW MEDIA QUERIES FOR RESPONSIVE BACKGROUND IMAGES - ENSURE THESE ARE AT THE END */
 
-/* Mobile devices in portrait orientation (up to 567px logical width) */
+/* === NEW MEDIA QUERIES FOR RESPONSIVE BACKGROUND IMAGES === */
+
+/* For extra small devices (phones, portrait) - up to 567px logical width */
+/* You have mobile-portrait-background.jpg, background-mobile.jpg, small-mobile-background.jpg, iphone16promax-background.jpg */
+/* Use the highest resolution portrait image you have for the best clarity. */
 @media (max-width: 567px) {
     #wrapper {
-        background: url(../img/mobile-portrait-background.jpg); /* Provide a high-res image for portrait mobile */
+        background: url(../img/mobile-portrait-background.jpg); /* Use a high-res portrait image */
         background-attachment: fixed;
         background-position: center;
         background-size: cover;
     }
 }
 
-/* Mobile devices in landscape orientation (568px to 767px logical width) */
+/* For small devices (phones, landscape) - 568px to 767px logical width */
 @media (min-width: 568px) and (max-width: 767px) {
     #wrapper {
-        background: url(../img/mobile-landscape-background.jpg); /* Provide a high-res image for landscape mobile */
+        background: url(../img/mobile-landscape-background.jpg); /* Use a high-res landscape image */
         background-attachment: fixed;
         background-position: center;
         background-size: cover;
     }
 }
 
-/* Tablet devices (768px to 1024px logical width) */
+/* For medium devices (tablets, portrait and landscape) - 768px to 1024px logical width */
 @media (min-width: 768px) and (max-width: 1024px) {
     #wrapper {
-        background: url(../img/tablet-background.jpg); /* Provide a high-res image for tablets */
+        background: url(../img/tablet-background.jpg); /* Use a high-res image for tablets */
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+/* For very small devices if needed (e.g., specific older/smaller phones) */
+@media (max-width: 320px) {
+    #wrapper {
+        background: url(../img/small-mobile-background.jpg); /* Smaller resolution portrait image */
+        background-attachment: fixed;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+/* Consider a very high-res portrait image for latest iPhones */
+@media (max-width: 420px) and (-webkit-min-device-pixel-ratio: 3),
+@media (max-width: 420px) and (min-resolution: 192dpi) {
+    #wrapper {
+        background: url(../img/iphone16promax-background.jpg); /* For very high-density screens */
         background-attachment: fixed;
         background-position: center;
         background-size: cover;
