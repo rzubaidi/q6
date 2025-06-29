@@ -1126,3 +1126,8 @@ form
         background-size: cover;
     }
 }
+@media (max-width: 767px) {
+  #wrapper {
+    background-attachment: scroll !important;
+  }
+}
